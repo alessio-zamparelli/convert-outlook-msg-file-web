@@ -1,12 +1,21 @@
 
 html {
+    background: #e8e8e8;
+    color: #212121;
     max-width: 70ch;
     padding: 3em 1em;
     margin: auto;
     line-height: 1.75;
     font-size: 1.25em;
     font-family: 'Poppins', sans-serif;
+}
 
+@media (prefers-color-scheme: dark) {
+  html {
+    background: #212121;
+    color: #e8e8e8;
+  }
+    /*[id="white"]:checked ~ .page-wrapper*/
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -40,3 +49,12 @@ nav a {
     margin-left: 50px;
     text-decoration: none;
 }
+
+.vis-hid{
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+

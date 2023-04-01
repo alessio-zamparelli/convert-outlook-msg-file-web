@@ -4,4 +4,4 @@ fly.toml
 old
 foto
 .env
-venv
+venv/.env

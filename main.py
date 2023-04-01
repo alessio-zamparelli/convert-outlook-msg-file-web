@@ -1,11 +1,31 @@
 import io
 import os
-
+import sentry_sdk
 from flask import Flask, render_template, request, redirect, send_file, abort
-
+from sentry_sdk.integrations.flask import FlaskIntegration
 from outlookmsgfile import load
+from dotenv import load_dotenv
+
+load_dotenv()
+
+SENTRY_DSN = os.environ.get("SENTRY_DSN")
+
+sentry_sdk.init(
+    dsn=SENTRY_DSN,
+    integrations=[FlaskIntegration()],
+
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    # We recommend adjusting this value in production.
+    traces_sample_rate=1.0
+)
 
 app = Flask(__name__)
+
+
+@app.route('/debug-sentry')
+def trigger_error():
+    division_by_zero = 1 / 0
 
 
 @app.errorhandler(404)
