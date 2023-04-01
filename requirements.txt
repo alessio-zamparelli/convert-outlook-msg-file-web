@@ -3,3 +3,4 @@ compressed-rtf
 Flask~=2.2.3
 setuptools==67.6.1
 Werkzeug~=2.2.3
+gunicorn
