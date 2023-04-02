@@ -3,5 +3,5 @@ compressed-rtf
 Flask~=2.2.3
 setuptools==67.6.1
 gunicorn
-python-dotenv~=1.0.0
+python-dotenv~=0.21.1
 sentry-sdk[flask]
